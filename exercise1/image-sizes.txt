@@ -1,0 +1,34 @@
+3.1
+➜  frontend docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+frontend3                   latest              4df0f290a252        14 minutes ago      641MB
+
+➜  frontend docker history frontend3
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+4df0f290a252        13 minutes ago      CMD ["/usr/bin/serve" "-s" "-l" "5000" "dist…   0B                  buildkit.dockerfile.v0
+<missing>           13 minutes ago      RUN /bin/sh -c npm run build # buildkit         35.3MB              buildkit.dockerfile.v0
+<missing>           14 minutes ago      RUN /bin/sh -c npm install && npm install -g…   217MB               buildkit.dockerfile.v0
+<missing>           14 minutes ago      WORKDIR /app/frontend                           0B                  buildkit.dockerfile.v0
+<missing>           19 minutes ago      RUN /bin/sh -c git clone https://github.com/…   917kB               buildkit.dockerfile.v0
+<missing>           20 minutes ago      RUN /bin/sh -c apt-get install -y nodejs # b…   103MB               buildkit.dockerfile.v0
+<missing>           21 minutes ago      RUN /bin/sh -c curl -sL https://deb.nodesour…   33.4MB              buildkit.dockerfile.v0
+<missing>           21 minutes ago      RUN /bin/sh -c apt-get update &&  apt-get in…   121MB               buildkit.dockerfile.v0
+<missing>           21 minutes ago      WORKDIR /app                                    0B                  buildkit.dockerfile.v0
+
+
+➜  frontend docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+frontend3                   latest              a4c02a06d75d        6 minutes ago       534MB
+
+➜  frontend docker history frontend3
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+a4c02a06d75d        4 minutes ago       CMD ["/usr/bin/serve" "-s" "-l" "5000" "dist…   0B                  buildkit.dockerfile.v0
+<missing>           4 minutes ago       RUN /bin/sh -c apt-get update &&  apt-get in…   404MB               buildkit.dockerfile.v0
+<missing>           38 minutes ago      WORKDIR /app                                    0B                  buildkit.dockerfile.v0
+<missing>           3 days ago          /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>           3 days ago          /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
+<missing>           3 days ago          /bin/sh -c rm -rf /var/lib/apt/lists/*          0B
+<missing>           3 days ago          /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B
+<missing>           3 days ago          /bin/sh -c #(nop) ADD file:8eef54430e581236e…   131MB
+
+

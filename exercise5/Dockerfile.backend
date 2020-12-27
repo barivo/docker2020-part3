@@ -1,0 +1,17 @@
+FROM node:10-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache git nodejs nodejs-npm && \
+    git clone https://github.com/docker-hy/backend-example-docker.git . && \
+    npm install && \
+    apk del git && \
+    deluser --remove-home node && \
+    adduser -D app && \
+    chown -R app /app
+
+USER app
+
+EXPOSE 8000
+
+CMD ["npm", "start"]

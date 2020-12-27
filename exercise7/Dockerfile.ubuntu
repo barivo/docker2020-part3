@@ -1,0 +1,14 @@
+# docker run -t -i -v $(pwd)/student0:/home/student0 cs162 /bin/bash
+FROM ubuntu:16.04
+COPY ./student0 /home/student0
+COPY .bashrc /root/.bashrc
+
+RUN apt-get update &&  apt-get install -y curl git gdb build-essential vim && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY vimrc /etc/vim/vimrc
+
+WORKDIR /home/student0
+
+CMD ["bash", "-l"]
+

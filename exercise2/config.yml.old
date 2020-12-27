@@ -1,0 +1,27 @@
+jobs:
+  build:
+    - docker/publish:
+        image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
+        tag: 'latest'
+
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/push-docker-image
+      - heroku/release-docker-image
+orbs:
+  heroku: circleci/heroku@1.2.3
+  docker: circleci/docker@1.0.0
+version: 2.1
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: sequential-branch-filter

@@ -1,0 +1,5 @@
+➜  cs162B docker images
+REPOSITORY             TAG       IMAGE ID       CREATED          SIZE
+cs162b                 latest    5f7cc9883b00   12 seconds ago   329MB
+
+cs162                  latest    3872aa66884c   42 hours ago     497MB

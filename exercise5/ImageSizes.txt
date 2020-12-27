@@ -1,0 +1,12 @@
+➜  exercise5 docker images
+REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
+
+frontend-alpine                    latest    4ec56d54f190   4 minutes ago    95.1MB 
+
+frontend-node-alpine               latest    4ec56d54f190   4 minutes ago    337MB
+backend-node-alpine                latest    f1fcee6c952b   39 seconds ago   149MB
+
+front-ubuntu                       latest    cdedc4eeff7c   2 hours ago      639MB
+back-ubuntu                        latest    bacafc9a9647   2 hours ago      404MB
+
+

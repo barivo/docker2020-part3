@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y git curl && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash && \
+    git clone https://github.com/docker-hy/frontend-example-docker.git . && \
+    apt-get install -y nodejs && \
+    npm install && \
+    npm install -g serve && \
+    npm run build && \
+    useradd app && chown -R app /app
+
+
+USER app
+EXPOSE 5000
+
+CMD ["npm", "start"]
